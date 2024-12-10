@@ -35,7 +35,7 @@ const checkEndGame = () => {
 
     if (disabledCards.length === 18) {
         clearInterval(this.loop);
-        winText.innerHTML = `Congrats ${spanPlayer.innerHTML}! Your time was ${timer.innerHTML} secs!!`;
+        winText.innerHTML = `Parabéns ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML} segundos!!`;
         winMessage.classList.remove('hidden');  // Mostrar a mensagem de vitória
         restartButton.style.display = 'block';  // Mostrar o botão de reinício
     }
