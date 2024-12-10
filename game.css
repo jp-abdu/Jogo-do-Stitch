@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Permanent Marker', cursive;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./images/BG02.png);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 1000px;
+    font-size: 1.5rem;
+    color: #004e88;
+    background: rgba(255, 255, 255, 0.423);
+    border-radius: 16px;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 2px solid #4882ae;
+}
+
+main img {
+    height: 150px;
+    padding-bottom: 20px;
+    max-width: 100%;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.player {
+    font-family: 'Patrick Hand', cursive;
+    color: #1f191a;
+}
+
+.timer {
+    font-family: 'Patrick Hand', cursive;
+    color: #1f191a;
+}
+
+.card {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-color: blueviolet;
+    border-radius: 10px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px solid #9d74a0;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-image: url(./images/stitchlogo.png);
+    backface-visibility: hidden;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disabled-card {
+    filter: saturate();
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.win-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #004e88;
+}
+
+.restart-button {
+    background-color: #5372a6;
+    padding: 10px;
+    border-radius: 10px;
+    color: #231f20;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border: 2px solid #9d74a0;
+    outline: none;
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+    header {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 5px;
+    }
+
+    .card {
+        aspect-ratio: 2 / 3;
+    }
+
+    .win-text {
+        font-size: 1.5rem;
+    }
+
+    .restart-button {
+        font-size: 1rem;
+    }
+
+    main img {
+        height: 100px;
+    }
+}
